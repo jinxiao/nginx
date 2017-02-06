@@ -164,5 +164,9 @@ esac
 
 chmod u+x /etc/init.d/nginx
 chkconfig --add nginx
+
+##set up environment variables
+echo "PATH=$PATH:/usr/local/nginx/sbin"
+
 echo "nginx has been installed successfully, use "service nginx start" to start"
 
