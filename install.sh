@@ -27,7 +27,7 @@ make && make install
 
 
 ##add initd file to /etc/init.d/
-echo "
+cat > /etc/init.d/nginx << EOF
 #!/bin/sh
 #
 # nginx - this script starts and stops the nginx daemon
@@ -159,8 +159,7 @@ case "$1" in
         echo $"Usage: $0 {start|stop|status|restart|condrestart|try-restart|reload|force-reload|configtest}"
         exit 2
 esac
-
-">/etc/init.d/nginx
+EOF
 
 chmod u+x /etc/init.d/nginx
 chkconfig --add nginx
